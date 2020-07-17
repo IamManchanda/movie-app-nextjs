@@ -7,14 +7,14 @@ import SideMenu from "components/side-menu";
 import Carousel from "components/carousel";
 import MovieList from "components/movie-list";
 import Footer from "components/footer";
-import MOVIES_DATA from "fixtures/movies.data";
+import { readMovies } from "store/movies/movies.action";
 
 const SectionStyled = styled.section`
   padding-top: 80px;
 `;
 
 const HomePage = () => {
-  const [movies] = useState(MOVIES_DATA);
+  const movies = readMovies();
   return (
     <Fragment>
       <Head>
