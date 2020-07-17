@@ -6,6 +6,11 @@ import SideMenu from "@/components/side-menu";
 import Carousel from "@/components/carousel";
 import MovieList from "@/components/movie-list";
 import Footer from "@/components/footer";
+import styled from "styled-components";
+
+const SectionStyled = styled.section`
+  padding-top: 80px;
+`;
 
 const HomePage = () => (
   <Fragment>
@@ -13,19 +18,21 @@ const HomePage = () => (
       <title>Home</title>
     </Head>
     <Navbar />
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-3">
-          <SideMenu />
-        </div>
-        <div className="col-lg-9">
-          <Carousel />
-          <div className="row">
-            <MovieList />
+    <SectionStyled>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-3">
+            <SideMenu />
+          </div>
+          <div className="col-lg-9">
+            <Carousel />
+            <div className="row">
+              <MovieList />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </SectionStyled>
     <Footer />
   </Fragment>
 );
