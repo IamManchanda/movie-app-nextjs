@@ -1,12 +1,13 @@
 import { Fragment } from "react";
 import Head from "next/head";
-
-import Navbar from "@/components/navbar";
-import SideMenu from "@/components/side-menu";
-import Carousel from "@/components/carousel";
-import MovieList from "@/components/movie-list";
-import Footer from "@/components/footer";
 import styled from "styled-components";
+
+import Navbar from "components/navbar";
+import SideMenu from "components/side-menu";
+import Carousel from "components/carousel";
+import MovieList from "components/movie-list";
+import Footer from "components/footer";
+import MOVIE_DATA from "fixtures/movie.data";
 
 const SectionStyled = styled.section`
   padding-top: 80px;
@@ -21,6 +22,7 @@ const HomePage = () => (
     <SectionStyled>
       <div className="container">
         <div className="row">
+          <code>{JSON.stringify(MOVIE_DATA)}</code>
           <div className="col-lg-3">
             <SideMenu />
           </div>
