@@ -1,4 +1,4 @@
-const MOVIE_DATA = [
+const MOVIES_DATA = [
   {
     id: "1",
     name: "The Shawshank Redemption",
@@ -34,4 +34,4 @@ const MOVIE_DATA = [
   },
 ];
 
-export default MOVIE_DATA;
+export default MOVIES_DATA;
