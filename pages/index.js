@@ -22,7 +22,7 @@ const HomePage = () => (
     <SectionStyled>
       <div className="container">
         <div className="row">
-          <code>{JSON.stringify(MOVIE_DATA)}</code>
+          <pre>{JSON.stringify(MOVIE_DATA[0], null, 2)}</pre>
           <div className="col-lg-3">
             <SideMenu />
           </div>
