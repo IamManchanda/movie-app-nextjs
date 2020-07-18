@@ -5,6 +5,6 @@ export const readMovies = () => {
     setTimeout(() => {
       resolve(MOVIES_DATA);
       /* reject("Can't fetch movies data."); */
-    }, 1000);
+    }, 100);
   });
 };

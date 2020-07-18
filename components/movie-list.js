@@ -21,7 +21,7 @@ const MovieList = ({ movies }) => {
                 <h4 className="card-title">
                   <a href="#">{name}</a>
                 </h4>
-                <p className="card-text">{shortenText(description, 120)}</p>
+                <p className="card-text">{shortenText(description, 125)}</p>
               </div>
               <div className="card-footer">
                 <small className="text-muted">{rating}</small>
