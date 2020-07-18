@@ -6,7 +6,9 @@ const AboutPage = () => (
     <Head>
       <title>About Page | Movie App</title>
     </Head>
-    <h1>About Page</h1>
+    <div className="container">
+      <h1>About Page</h1>
+    </div>
   </Fragment>
 );
 

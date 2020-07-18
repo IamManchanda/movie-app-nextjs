@@ -6,7 +6,9 @@ const ContactPage = () => (
     <Head>
       <title>Contact Page | Movie App</title>
     </Head>
-    <h1>Contact Page</h1>
+    <div className="container">
+      <h1>Contact Page</h1>
+    </div>
   </Fragment>
 );
 
