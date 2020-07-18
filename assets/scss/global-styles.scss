@@ -1,0 +1,30 @@
+/**
+ * This Global Styles SCSS file content (or the imported content of it)
+ * should be as lean as possible and components instead should have
+ * scoped styles with CSS-in-JS solution like Styled components.
+ * If you are building a multi theme project, then theme styles should not
+ * also go here, instead theme related global styles should use global style 
+ * functionality such as Styled components, `createGlobalStyle`
+ **/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.content-base {
+  padding: 4rem 0 1rem;
+}

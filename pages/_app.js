@@ -1,12 +1,11 @@
 import App from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
+import Navbar from "components/navbar";
+import Footer from "components/footer";
+import "assets/scss/global-styles.scss";
 
-const theme = {
-  colors: {
-    primary: "#0070f3",
-  },
-};
+const theme = {};
 
 const AppWithWrapper = ({ Component, pageProps }) => (
   <ThemeProvider theme={theme}>
@@ -33,7 +32,11 @@ const AppWithWrapper = ({ Component, pageProps }) => (
         crossOrigin="anonymous"
       />
     </Head>
-    <Component {...pageProps} />
+    <Navbar />
+    <section className="content-base">
+      <Component {...pageProps} />
+    </section>
+    <Footer />
   </ThemeProvider>
 );
 

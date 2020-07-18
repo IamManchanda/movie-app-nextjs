@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 
-const SideMenu = ({ appName }) => (
+const SideMenu = () => (
   <Fragment>
-    <h1 className="my-4">{appName}</h1>
+    <h1 className="my-4">Categories</h1>
     <div className="list-group">
       <a href="#" className="list-group-item">
         Category 1

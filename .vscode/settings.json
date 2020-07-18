@@ -1,16 +1,6 @@
 {
   "files.exclude": {
     "node_modules": true,
-    ".pnp": true,
-    "**/.pnp.js": true,
-    "coverage": true,
     ".next/": true,
-    "out/": true,
-    "build": true,
-    "**/.DS_Store": true,
-    "**/npm-debug.log*": true,
-    "**/yarn-debug.log*": true,
-    "**/yarn-error.log*": true,
-    "rough": true
   }
 }
