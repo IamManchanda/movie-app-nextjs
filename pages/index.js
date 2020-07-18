@@ -15,11 +15,16 @@ const SectionStyled = styled.section`
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     (async function handleMoviesAsync() {
-      const data = await readMovies();
-      setMovies(data);
+      try {
+        const moviesData = await readMovies();
+        setMovies(moviesData);
+      } catch (error) {
+        setErrorMessage(error);
+      }
     })();
   }, []);
 
@@ -38,6 +43,13 @@ const HomePage = () => {
             <div className="col-lg-9">
               <Carousel />
               <div className="row">
+                {errorMessage && (
+                  <div className="col-lg-12">
+                    <div className="alert alert-danger" role="alert">
+                      {errorMessage}
+                    </div>
+                  </div>
+                )}
                 <MovieList movies={movies} />
               </div>
             </div>
