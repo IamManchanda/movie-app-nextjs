@@ -1,11 +1,10 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import styled from "styled-components";
 
 import SideMenu from "components/side-menu";
 import Carousel from "components/carousel";
 import MovieList from "components/movie-list";
-import { readMovies } from "store/movies/movies.action";
+import { getMovies } from "store/movies/movies.actions";
 
 const HomePage = ({ movies, errorMessage }) => (
   <Fragment>
@@ -39,7 +38,7 @@ export const getStaticProps = async () => {
   let movies = [];
   let errorMessage = "";
   try {
-    movies = await readMovies();
+    movies = await getMovies();
   } catch (error) {
     errorMessage = error;
   }
