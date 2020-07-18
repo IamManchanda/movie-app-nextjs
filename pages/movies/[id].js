@@ -29,7 +29,7 @@ const MovieByIdPage = ({
         <h1 className="display-4">{name}!</h1>
         <p className="lead">{description}</p>
         <hr className="my-4" />
-        <p>{genre.toUpperCase()}</p>
+        <p>{genre}</p>
         <a className="btn btn-primary btn-lg" role="button">
           Learn more
         </a>
