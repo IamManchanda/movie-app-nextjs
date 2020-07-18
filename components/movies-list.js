@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { shortenText } from "utils/helpers";
 
-const MovieList = ({ movies }) => {
+const MoviesList = ({ movies }) => {
   return (
     <Fragment>
       {movies.map(({ id, name, description, rating, image }) => (
@@ -37,4 +37,4 @@ const MovieList = ({ movies }) => {
   );
 };
 
-export default MovieList;
+export default MoviesList;

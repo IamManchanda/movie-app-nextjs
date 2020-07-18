@@ -1,6 +1,6 @@
 const MOVIES_DATA = [
   {
-    id: "1",
+    id: "7c98a760-8b5c-47ab-8aba-c3263dfdc3ee",
     name: "The Shawshank Redemption",
     releaseYear: 1994,
     description:
@@ -10,10 +10,10 @@ const MOVIES_DATA = [
     rating: 4.8,
     genre: "drama",
     image:
-      "https://m.media-amazon.com/images/M/MV5BNjQ2NDA3MDcxMF5BMl5BanBnXkFtZTgwMjE5NTU0NzE@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
+      "https://img.cinemablend.com/filter:scale/quill/6/4/4/b/3/1/644b31e918b5a86815a858189e54da3148ab5a30.jpg?fw=1000",
   },
   {
-    id: "2",
+    id: "fd8a1b9b-1081-4407-b06c-be53ff6bce44",
     name: "The Dark Knight",
     releaseYear: 2008,
     description:
@@ -23,10 +23,10 @@ const MOVIES_DATA = [
     rating: 4.7,
     genre: "action, crime, drama",
     image:
-      "https://img.cinemablend.com/filter:scale/quill/c/3/8/0/f/4/c380f4f12cfeec19f0c40c6f57db188f2f98cca8.jpg?mw=600",
+      "https://img.cinemablend.com/filter:scale/quill/6/7/f/5/3/9/67f5391012ab341a4743c340d6cd0833ddbb96ca.jpg?mw=1000",
   },
   {
-    id: "3",
+    id: "20437427-6eeb-4644-a8c2-db7446aea221",
     name: "Lord of the Rings",
     releaseYear: 2004,
     description:
@@ -36,7 +36,7 @@ const MOVIES_DATA = [
     rating: 4.9,
     genre: "adventure, drama, fantasy",
     image:
-      "https://img.cinemablend.com/filter:scale/quill/0/f/5/2/a/6/0f52a6843a25c1a5c1f9a0c00548cad9e1d912e2.jpg?mw=600",
+      "https://img.cinemablend.com/filter:scale/quill/0/f/5/2/a/6/0f52a6843a25c1a5c1f9a0c00548cad9e1d912e2.jpg?mw=1000",
   },
 ];
 

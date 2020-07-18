@@ -1,47 +1,31 @@
 import { Fragment } from "react";
 
-const Carousel = () => (
+const Carousel = ({ images }) => (
   <Fragment>
-    <div
-      id="carouselExampleIndicators"
-      className="carousel slide my-4"
-      data-ride="carousel"
-    >
+    <div id="carouselMain" className="carousel slide my-4" data-ride="carousel">
       <ol className="carousel-indicators">
-        <li
-          data-target="#carouselExampleIndicators"
-          data-slide-to="0"
-          className="active"
-        ></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        {images.map(({ id }, idx) => (
+          <li
+            key={id}
+            data-target="#carouselMain"
+            data-slide-to={idx}
+            className={idx === 0 ? "active" : ""}
+          ></li>
+        ))}
       </ol>
       <div className="carousel-inner" role="listbox">
-        <div className="carousel-item active">
-          <img
-            className="d-block img-fluid"
-            src="https://placehold.it/900x350"
-            alt="First slide"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            className="d-block img-fluid"
-            src="https://placehold.it/900x350"
-            alt="Second slide"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            className="d-block img-fluid"
-            src="https://placehold.it/900x350"
-            alt="Third slide"
-          />
-        </div>
+        {images.map(({ id, name, image }, idx) => (
+          <div
+            key={id}
+            className={`carousel-item${idx === 0 ? " active" : ""}`}
+          >
+            <img className="d-block img-fluid" src={image} alt={name} />
+          </div>
+        ))}
       </div>
       <a
         className="carousel-control-prev"
-        href="#carouselExampleIndicators"
+        href="#carouselMain"
         role="button"
         data-slide="prev"
       >
@@ -50,7 +34,7 @@ const Carousel = () => (
       </a>
       <a
         className="carousel-control-next"
-        href="#carouselExampleIndicators"
+        href="#carouselMain"
         role="button"
         data-slide="next"
       >

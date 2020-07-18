@@ -3,10 +3,10 @@ import Head from "next/head";
 
 import SideMenu from "components/side-menu";
 import Carousel from "components/carousel";
-import MovieList from "components/movie-list";
-import { getMovies } from "store/movies/movies.actions";
+import MoviesList from "components/movies-list";
+import { getMovies, getCategories } from "store/movies/movies.actions";
 
-const HomePage = ({ movies, errorMessage }) => (
+const HomePage = ({ movies, images, categories }) => (
   <Fragment>
     <Head>
       <title>Home Page | Movie App</title>
@@ -14,19 +14,12 @@ const HomePage = ({ movies, errorMessage }) => (
     <div className="container">
       <div className="row">
         <div className="col-lg-3">
-          <SideMenu />
+          <SideMenu categories={categories} />
         </div>
         <div className="col-lg-9">
-          <Carousel />
+          <Carousel images={images} />
           <div className="row">
-            {errorMessage && (
-              <div className="col-lg-12">
-                <div className="alert alert-danger" role="alert">
-                  {errorMessage}
-                </div>
-              </div>
-            )}
-            <MovieList movies={movies} />
+            <MoviesList movies={movies} />
           </div>
         </div>
       </div>
@@ -35,17 +28,18 @@ const HomePage = ({ movies, errorMessage }) => (
 );
 
 export const getStaticProps = async () => {
-  let movies = [];
-  let errorMessage = "";
-  try {
-    movies = await getMovies();
-  } catch (error) {
-    errorMessage = error;
-  }
+  const movies = await getMovies();
+  const images = movies.map(({ id, name, image }) => ({
+    id: `image-${id}`,
+    name,
+    image,
+  }));
+  const categories = await getCategories();
   return {
     props: {
       movies,
-      errorMessage,
+      images,
+      categories,
     },
   };
 };

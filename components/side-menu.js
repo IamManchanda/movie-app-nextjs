@@ -1,18 +1,14 @@
 import { Fragment } from "react";
 
-const SideMenu = () => (
+const SideMenu = ({ categories }) => (
   <Fragment>
-    <h1 className="my-4">Categories</h1>
+    <h1 className="h2 my-4">Categories</h1>
     <div className="list-group">
-      <a href="#" className="list-group-item">
-        Category 1
-      </a>
-      <a href="#" className="list-group-item">
-        Category 2
-      </a>
-      <a href="#" className="list-group-item">
-        Category 3
-      </a>
+      {categories.map(({ id, name }) => (
+        <a key={id} href="#" className="list-group-item">
+          {name}
+        </a>
+      ))}
     </div>
   </Fragment>
 );
