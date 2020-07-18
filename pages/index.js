@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -14,7 +14,15 @@ const SectionStyled = styled.section`
 `;
 
 const HomePage = () => {
-  const movies = readMovies();
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    (async function handleMoviesAsync() {
+      const data = await readMovies();
+      setMovies(data);
+    })();
+  }, []);
+
   return (
     <Fragment>
       <Head>
