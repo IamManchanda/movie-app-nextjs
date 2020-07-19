@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-const Modal = () => {
+const Modal = ({ children }) => {
   let closeButton = null;
   const handleSubmitModal = () => {
     alert("Submitting Modal");
@@ -40,7 +40,7 @@ const Modal = () => {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">{children}</div>
             <div className="modal-footer">
               <button
                 type="button"
