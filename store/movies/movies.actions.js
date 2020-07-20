@@ -1,9 +1,19 @@
+import { v4 as uuidv4 } from "uuid";
+
 import MOVIES_DATA from "fixtures/movies.data";
 import CATEGORIES_DATA from "fixtures/categories.data";
 
 export const getMovies = () =>
   new Promise((resolve, reject) => {
     setTimeout(() => resolve(MOVIES_DATA), 50);
+  });
+
+export const createMovie = (movie) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      MOVIES_DATA.push({ id: uuidv4(), ...movie });
+      resolve(MOVIES_DATA);
+    }, 50);
   });
 
 export const getCategories = () =>

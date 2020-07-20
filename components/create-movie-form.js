@@ -1,22 +1,39 @@
 import { Fragment, useState } from "react";
 
-const CreateMovieForm = () => {
+const CreateMovieForm = ({ onFormSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     rating: 3,
     image: "",
     longDescription: "",
+    genre: "",
   });
   const handleFormInputChange = ({ target: { name, value } = {} }) =>
     setFormData({
       ...formData,
       [name]: value,
     });
+  const handleGenreSelectChange = ({ target: { options } = {} }) => {
+    let values = [];
+    for (let idx = 0; idx < options.length; idx++) {
+      const element = options[idx];
+      if (element.selected) {
+        values.push(element.value);
+      }
+    }
+    setFormData({
+      ...formData,
+      genre: values.toString(),
+    });
+  };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    onFormSubmit({ ...formData });
+  };
   return (
     <Fragment>
-      <pre>{JSON.stringify(formData, null, 2)}</pre>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -85,13 +102,24 @@ const CreateMovieForm = () => {
         </div>
         <div className="form-group">
           <label htmlFor="genre">Genre</label>
-          <select multiple className="form-control" id="genre">
+          <select
+            multiple
+            id="genre"
+            name="genre"
+            onChange={handleGenreSelectChange}
+            className="form-control"
+          >
             <option>drama</option>
             <option>music</option>
             <option>adventure</option>
             <option>historical</option>
             <option>action</option>
           </select>
+        </div>
+        <div className="form-group d-flex justify-content-end my-2">
+          <button type="submit" className="btn btn-primary">
+            Create Movie
+          </button>
         </div>
       </form>
     </Fragment>
